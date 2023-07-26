@@ -1,0 +1,14 @@
+[2023-04-08T03:11:06.927+0000] {processor.py:153} INFO - Started process (PID=40) to work on /opt/airflow/dags/elt.py
+[2023-04-08T03:11:06.928+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/elt.py for tasks to queue
+[2023-04-08T03:11:06.929+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:06.929+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/elt.py
+[2023-04-08T03:11:07.484+0000] {processor.py:753} INFO - DAG(s) dict_keys(['ELT']) retrieved from /opt/airflow/dags/elt.py
+[2023-04-08T03:11:07.551+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:07.550+0000] {dag.py:2705} INFO - Sync 1 DAGs
+[2023-04-08T03:11:07.572+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:07.572+0000] {dag.py:3456} INFO - Setting next_dagrun for ELT to None, run_after=None
+[2023-04-08T03:11:07.593+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/elt.py took 0.669 seconds
+[2023-04-08T03:11:37.650+0000] {processor.py:153} INFO - Started process (PID=94) to work on /opt/airflow/dags/elt.py
+[2023-04-08T03:11:37.651+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/elt.py for tasks to queue
+[2023-04-08T03:11:37.652+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:37.652+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/elt.py
+[2023-04-08T03:11:38.061+0000] {processor.py:753} INFO - DAG(s) dict_keys(['ELT']) retrieved from /opt/airflow/dags/elt.py
+[2023-04-08T03:11:38.079+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:38.078+0000] {dag.py:2705} INFO - Sync 1 DAGs
+[2023-04-08T03:11:38.098+0000] {logging_mixin.py:137} INFO - [2023-04-08T03:11:38.098+0000] {dag.py:3456} INFO - Setting next_dagrun for ELT to None, run_after=None
+[2023-04-08T03:11:38.113+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/elt.py took 0.465 seconds

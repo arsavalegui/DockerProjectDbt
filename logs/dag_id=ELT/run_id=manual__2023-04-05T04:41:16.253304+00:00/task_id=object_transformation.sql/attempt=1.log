@@ -1,0 +1,39 @@
+[2023-04-05T04:41:18.516+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:41:16.253304+00:00 [queued]>
+[2023-04-05T04:41:18.524+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:41:16.253304+00:00 [queued]>
+[2023-04-05T04:41:18.524+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:41:18.525+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:41:18.525+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:41:18.536+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): object_transformation.sql> on 2023-04-05 04:41:16.253304+00:00
+[2023-04-05T04:41:18.542+0000] {standard_task_runner.py:55} INFO - Started process 295 to run task
+[2023-04-05T04:41:18.546+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'object_transformation.sql', 'manual__2023-04-05T04:41:16.253304+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpxpwig2q2']
+[2023-04-05T04:41:18.547+0000] {standard_task_runner.py:83} INFO - Job 87: Subtask object_transformation.sql
+[2023-04-05T04:41:18.600+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:41:16.253304+00:00 [running]> on host f5e703d34d7f
+[2023-04-05T04:41:18.659+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=object_transformation.sql
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:41:16.253304+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:41:16.253304+00:00
+[2023-04-05T04:41:18.662+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:41:18.662+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --project-dir /opt/***/demo']
+[2023-04-05T04:41:18.676+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:41:20.720+0000] {subprocess.py:93} INFO - [0m04:41:20  Encountered an error while reading the project:  ERROR: Runtime Error
+[2023-04-05T04:41:20.720+0000] {subprocess.py:93} INFO -   Could not find profile named 'demo'
+[2023-04-05T04:41:20.722+0000] {subprocess.py:93} INFO - [0m04:41:20  Encountered an error:
+[2023-04-05T04:41:20.722+0000] {subprocess.py:93} INFO - Runtime Error
+[2023-04-05T04:41:20.722+0000] {subprocess.py:93} INFO -   Could not run dbt
+[2023-04-05T04:41:20.975+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-04-05T04:41:20.987+0000] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-04-05T04:41:20.992+0000] {taskinstance.py:1332} INFO - Marking task as FAILED. dag_id=ELT, task_id=object_transformation.sql, execution_date=20230405T044116, start_date=20230405T044118, end_date=20230405T044120
+[2023-04-05T04:41:21.013+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 87 for task object_transformation.sql (Bash command failed. The command returned a non-zero exit code 2.; 295)
+[2023-04-05T04:41:21.045+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-05T04:41:21.064+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

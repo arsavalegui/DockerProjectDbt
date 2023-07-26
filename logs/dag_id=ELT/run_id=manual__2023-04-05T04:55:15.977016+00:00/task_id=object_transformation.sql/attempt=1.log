@@ -1,0 +1,56 @@
+[2023-04-05T04:55:18.806+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:55:15.977016+00:00 [queued]>
+[2023-04-05T04:55:18.813+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:55:15.977016+00:00 [queued]>
+[2023-04-05T04:55:18.814+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:55:18.814+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:55:18.814+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:55:18.827+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): object_transformation.sql> on 2023-04-05 04:55:15.977016+00:00
+[2023-04-05T04:55:18.833+0000] {standard_task_runner.py:55} INFO - Started process 491 to run task
+[2023-04-05T04:55:18.836+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'object_transformation.sql', 'manual__2023-04-05T04:55:15.977016+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpxg0zhulh']
+[2023-04-05T04:55:18.836+0000] {standard_task_runner.py:83} INFO - Job 107: Subtask object_transformation.sql
+[2023-04-05T04:55:18.896+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:55:15.977016+00:00 [running]> on host bfa8d25d3169
+[2023-04-05T04:55:18.956+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=object_transformation.sql
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:55:15.977016+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:55:15.977016+00:00
+[2023-04-05T04:55:18.960+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:55:18.960+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/demo && dbt run']
+[2023-04-05T04:55:18.973+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:55:21.294+0000] {subprocess.py:93} INFO - [0m04:55:21  Running with dbt=1.4.5
+[2023-04-05T04:55:21.414+0000] {subprocess.py:93} INFO - [0m04:55:21  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-04-05T04:55:21.415+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2023-04-05T04:55:21.415+0000] {subprocess.py:93} INFO - - models.demo.example
+[2023-04-05T04:55:21.435+0000] {subprocess.py:93} INFO - [0m04:55:21  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[2023-04-05T04:55:21.439+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.560+0000] {subprocess.py:93} INFO - [0m04:55:21  Concurrency: 1 threads (target='dev')
+[2023-04-05T04:55:21.561+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.570+0000] {subprocess.py:93} INFO - [0m04:55:21  1 of 1 START sql view model elt_dbt.object_transformation ...................... [RUN]
+[2023-04-05T04:55:21.696+0000] {subprocess.py:93} INFO - [0m04:55:21  1 of 1 ERROR creating sql view model elt_dbt.object_transformation ............. [[31mERROR[0m in 0.12s]
+[2023-04-05T04:55:21.787+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.788+0000] {subprocess.py:93} INFO - [0m04:55:21  Finished running 1 view model in 0 hours 0 minutes and 0.35 seconds (0.35s).
+[2023-04-05T04:55:21.797+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.797+0000] {subprocess.py:93} INFO - [0m04:55:21  [31mCompleted with 1 error and 0 warnings:[0m
+[2023-04-05T04:55:21.798+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.799+0000] {subprocess.py:93} INFO - [0m04:55:21  [33mDatabase Error in model object_transformation (models/object_transformation.sql)[0m
+[2023-04-05T04:55:21.801+0000] {subprocess.py:93} INFO - [0m04:55:21    syntax error at or near "copy"
+[2023-04-05T04:55:21.802+0000] {subprocess.py:93} INFO - [0m04:55:21    LINE 4:     copy (select distinct(dron_table.type), SUM(avg_speed), ...
+[2023-04-05T04:55:21.802+0000] {subprocess.py:93} INFO - [0m04:55:21                ^
+[2023-04-05T04:55:21.803+0000] {subprocess.py:93} INFO - [0m04:55:21    compiled Code at target/run/demo/models/object_transformation.sql
+[2023-04-05T04:55:21.804+0000] {subprocess.py:93} INFO - [0m04:55:21
+[2023-04-05T04:55:21.805+0000] {subprocess.py:93} INFO - [0m04:55:21  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2023-04-05T04:55:22.438+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-04-05T04:55:22.450+0000] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-04-05T04:55:22.453+0000] {taskinstance.py:1332} INFO - Marking task as FAILED. dag_id=ELT, task_id=object_transformation.sql, execution_date=20230405T045515, start_date=20230405T045518, end_date=20230405T045522
+[2023-04-05T04:55:22.469+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 107 for task object_transformation.sql (Bash command failed. The command returned a non-zero exit code 1.; 491)
+[2023-04-05T04:55:22.498+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-05T04:55:22.516+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

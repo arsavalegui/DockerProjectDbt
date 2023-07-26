@@ -1,0 +1,57 @@
+[2023-04-05T04:47:45.470+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:47:42.992067+00:00 [queued]>
+[2023-04-05T04:47:45.478+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:47:42.992067+00:00 [queued]>
+[2023-04-05T04:47:45.478+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:47:45.478+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:47:45.478+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:47:45.491+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): object_transformation.sql> on 2023-04-05 04:47:42.992067+00:00
+[2023-04-05T04:47:45.497+0000] {standard_task_runner.py:55} INFO - Started process 206 to run task
+[2023-04-05T04:47:45.500+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'object_transformation.sql', 'manual__2023-04-05T04:47:42.992067+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp_x4ue2zv']
+[2023-04-05T04:47:45.500+0000] {standard_task_runner.py:83} INFO - Job 99: Subtask object_transformation.sql
+[2023-04-05T04:47:45.558+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:47:42.992067+00:00 [running]> on host bfa8d25d3169
+[2023-04-05T04:47:45.617+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=object_transformation.sql
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:47:42.992067+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:47:42.992067+00:00
+[2023-04-05T04:47:45.620+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:47:45.621+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/demo && dbt run']
+[2023-04-05T04:47:45.635+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:47:47.795+0000] {subprocess.py:93} INFO - [0m04:47:47  Running with dbt=1.4.5
+[2023-04-05T04:47:47.879+0000] {subprocess.py:93} INFO - [0m04:47:47  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-04-05T04:47:47.879+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2023-04-05T04:47:47.879+0000] {subprocess.py:93} INFO - - models.demo.example
+[2023-04-05T04:47:47.891+0000] {subprocess.py:93} INFO - [0m04:47:47  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[2023-04-05T04:47:47.894+0000] {subprocess.py:93} INFO - [0m04:47:47
+[2023-04-05T04:47:47.959+0000] {subprocess.py:93} INFO - [0m04:47:47  Concurrency: 1 threads (target='dev')
+[2023-04-05T04:47:47.960+0000] {subprocess.py:93} INFO - [0m04:47:47
+[2023-04-05T04:47:47.967+0000] {subprocess.py:93} INFO - [0m04:47:47  1 of 1 START sql view model elt_dbt.object_transformation ...................... [RUN]
+[2023-04-05T04:47:48.079+0000] {subprocess.py:93} INFO - [0m04:47:48  1 of 1 ERROR creating sql view model elt_dbt.object_transformation ............. [[31mERROR[0m in 0.11s]
+[2023-04-05T04:47:48.178+0000] {subprocess.py:93} INFO - [0m04:47:48
+[2023-04-05T04:47:48.178+0000] {subprocess.py:93} INFO - [0m04:47:48  Finished running 1 view model in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[2023-04-05T04:47:48.185+0000] {subprocess.py:93} INFO - [0m04:47:48
+[2023-04-05T04:47:48.186+0000] {subprocess.py:93} INFO - [0m04:47:48  [31mCompleted with 1 error and 0 warnings:[0m
+[2023-04-05T04:47:48.186+0000] {subprocess.py:93} INFO - [0m04:47:48
+[2023-04-05T04:47:48.187+0000] {subprocess.py:93} INFO - [0m04:47:48  [33mDatabase Error in model object_transformation (models/object_transformation.sql)[0m
+[2023-04-05T04:47:48.188+0000] {subprocess.py:93} INFO - [0m04:47:48    column "type1" does not exist
+[2023-04-05T04:47:48.188+0000] {subprocess.py:93} INFO - [0m04:47:48    LINE 4:     select distinct(type1), SUM(avg_speed), AVG(traveled_d),...
+[2023-04-05T04:47:48.189+0000] {subprocess.py:93} INFO - [0m04:47:48                                ^
+[2023-04-05T04:47:48.190+0000] {subprocess.py:93} INFO - [0m04:47:48    HINT:  Perhaps you meant to reference the column "dron_table.type".
+[2023-04-05T04:47:48.190+0000] {subprocess.py:93} INFO - [0m04:47:48    compiled Code at target/run/demo/models/object_transformation.sql
+[2023-04-05T04:47:48.191+0000] {subprocess.py:93} INFO - [0m04:47:48
+[2023-04-05T04:47:48.192+0000] {subprocess.py:93} INFO - [0m04:47:48  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2023-04-05T04:47:48.815+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-04-05T04:47:48.826+0000] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-04-05T04:47:48.830+0000] {taskinstance.py:1332} INFO - Marking task as FAILED. dag_id=ELT, task_id=object_transformation.sql, execution_date=20230405T044742, start_date=20230405T044745, end_date=20230405T044748
+[2023-04-05T04:47:48.842+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 99 for task object_transformation.sql (Bash command failed. The command returned a non-zero exit code 1.; 206)
+[2023-04-05T04:47:48.881+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-05T04:47:48.901+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,37 @@
+[2023-04-05T04:18:57.084+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.transform manual__2023-04-05T04:18:54.657621+00:00 [queued]>
+[2023-04-05T04:18:57.094+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.transform manual__2023-04-05T04:18:54.657621+00:00 [queued]>
+[2023-04-05T04:18:57.095+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:18:57.095+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:18:57.095+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:18:57.106+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): transform> on 2023-04-05 04:18:54.657621+00:00
+[2023-04-05T04:18:57.113+0000] {standard_task_runner.py:55} INFO - Started process 226 to run task
+[2023-04-05T04:18:57.116+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'transform', 'manual__2023-04-05T04:18:54.657621+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp4coi7lrz']
+[2023-04-05T04:18:57.116+0000] {standard_task_runner.py:83} INFO - Job 53: Subtask transform
+[2023-04-05T04:18:57.176+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.transform manual__2023-04-05T04:18:54.657621+00:00 [running]> on host 08fcf180c6cc
+[2023-04-05T04:18:57.238+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:18:54.657621+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:18:54.657621+00:00
+[2023-04-05T04:18:57.240+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:18:57.241+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run']
+[2023-04-05T04:18:57.256+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:18:59.301+0000] {subprocess.py:93} INFO - [0m04:18:59  Encountered an error:
+[2023-04-05T04:18:59.301+0000] {subprocess.py:93} INFO - Runtime Error
+[2023-04-05T04:18:59.302+0000] {subprocess.py:93} INFO -   fatal: Not a dbt project (or any of the parent directories). Missing dbt_project.yml file
+[2023-04-05T04:18:59.507+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-04-05T04:18:59.519+0000] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-04-05T04:18:59.521+0000] {taskinstance.py:1332} INFO - Marking task as FAILED. dag_id=ELT, task_id=transform, execution_date=20230405T041854, start_date=20230405T041857, end_date=20230405T041859
+[2023-04-05T04:18:59.542+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 53 for task transform (Bash command failed. The command returned a non-zero exit code 2.; 226)
+[2023-04-05T04:18:59.574+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-05T04:18:59.592+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

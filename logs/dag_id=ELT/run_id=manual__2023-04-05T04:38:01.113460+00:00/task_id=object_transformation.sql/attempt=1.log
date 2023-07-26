@@ -1,0 +1,46 @@
+[2023-04-05T04:38:04.349+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:38:01.113460+00:00 [queued]>
+[2023-04-05T04:38:04.358+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:38:01.113460+00:00 [queued]>
+[2023-04-05T04:38:04.358+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:38:04.358+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:38:04.359+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:38:04.370+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): object_transformation.sql> on 2023-04-05 04:38:01.113460+00:00
+[2023-04-05T04:38:04.376+0000] {standard_task_runner.py:55} INFO - Started process 157 to run task
+[2023-04-05T04:38:04.380+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'object_transformation.sql', 'manual__2023-04-05T04:38:01.113460+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpu4cj2xlj']
+[2023-04-05T04:38:04.381+0000] {standard_task_runner.py:83} INFO - Job 75: Subtask object_transformation.sql
+[2023-04-05T04:38:04.438+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:38:01.113460+00:00 [running]> on host f5e703d34d7f
+[2023-04-05T04:38:04.499+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=object_transformation.sql
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:38:01.113460+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:38:01.113460+00:00
+[2023-04-05T04:38:04.501+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:38:04.502+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run ./demo']
+[2023-04-05T04:38:04.520+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:38:06.873+0000] {subprocess.py:93} INFO - usage: dbt [-h] [--version] [-r RECORD_TIMING_INFO] [-d]
+[2023-04-05T04:38:06.873+0000] {subprocess.py:93} INFO -            [--log-format {text,json,default}] [--no-write-json]
+[2023-04-05T04:38:06.873+0000] {subprocess.py:93} INFO -            [--use-colors | --no-use-colors] [--printer-width PRINTER_WIDTH]
+[2023-04-05T04:38:06.874+0000] {subprocess.py:93} INFO -            [--warn-error | --warn-error-options WARN_ERROR_OPTIONS]
+[2023-04-05T04:38:06.874+0000] {subprocess.py:93} INFO -            [--no-version-check] [--partial-parse | --no-partial-parse]
+[2023-04-05T04:38:06.874+0000] {subprocess.py:93} INFO -            [--use-experimental-parser] [--no-static-parser]
+[2023-04-05T04:38:06.874+0000] {subprocess.py:93} INFO -            [--profiles-dir PROFILES_DIR] [--no-anonymous-usage-stats] [-x]
+[2023-04-05T04:38:06.874+0000] {subprocess.py:93} INFO -            [-q] [--no-print]
+[2023-04-05T04:38:06.875+0000] {subprocess.py:93} INFO -            [--cache-selected-only | --no-cache-selected-only]
+[2023-04-05T04:38:06.875+0000] {subprocess.py:93} INFO -            {docs,source,init,clean,debug,deps,list,ls,build,snapshot,run,compile,parse,test,seed,run-operation}
+[2023-04-05T04:38:06.875+0000] {subprocess.py:93} INFO -            ...
+[2023-04-05T04:38:06.875+0000] {subprocess.py:93} INFO - dbt: error: unrecognized arguments: ./demo
+[2023-04-05T04:38:07.083+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-04-05T04:38:07.094+0000] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-04-05T04:38:07.098+0000] {taskinstance.py:1332} INFO - Marking task as FAILED. dag_id=ELT, task_id=object_transformation.sql, execution_date=20230405T043801, start_date=20230405T043804, end_date=20230405T043807
+[2023-04-05T04:38:07.119+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 75 for task object_transformation.sql (Bash command failed. The command returned a non-zero exit code 2.; 157)
+[2023-04-05T04:38:07.159+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-05T04:38:07.177+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,2 @@
+[2023-05-18T02:31:54.093+0000] {taskinstance.py:1084} INFO - Dependencies not met for <TaskInstance: ELT.create_extract_data manual__2023-05-04T18:31:03.953796+00:00 [success]>, dependency 'Task Instance State' FAILED: Task is in the 'success' state.
+[2023-05-18T02:31:54.097+0000] {local_task_job.py:151} INFO - Task is not able to be run

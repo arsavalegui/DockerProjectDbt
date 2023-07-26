@@ -1,0 +1,44 @@
+[2023-04-05T04:50:33.464+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:50:30.761828+00:00 [queued]>
+[2023-04-05T04:50:33.474+0000] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:50:30.761828+00:00 [queued]>
+[2023-04-05T04:50:33.474+0000] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:50:33.475+0000] {taskinstance.py:1289} INFO - Starting attempt 1 of 1
+[2023-04-05T04:50:33.475+0000] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-05T04:50:33.489+0000] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): object_transformation.sql> on 2023-04-05 04:50:30.761828+00:00
+[2023-04-05T04:50:33.499+0000] {standard_task_runner.py:55} INFO - Started process 321 to run task
+[2023-04-05T04:50:33.502+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'ELT', 'object_transformation.sql', 'manual__2023-04-05T04:50:30.761828+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpz39m8m9j']
+[2023-04-05T04:50:33.503+0000] {standard_task_runner.py:83} INFO - Job 103: Subtask object_transformation.sql
+[2023-04-05T04:50:33.577+0000] {task_command.py:389} INFO - Running <TaskInstance: ELT.object_transformation.sql manual__2023-04-05T04:50:30.761828+00:00 [running]> on host bfa8d25d3169
+[2023-04-05T04:50:33.641+0000] {taskinstance.py:1518} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=200300600@ucaribe.edu.mx
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ELT
+AIRFLOW_CTX_TASK_ID=object_transformation.sql
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-05T04:50:30.761828+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-05T04:50:30.761828+00:00
+[2023-04-05T04:50:33.644+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-05T04:50:33.644+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/demo && dbt run']
+[2023-04-05T04:50:33.666+0000] {subprocess.py:86} INFO - Output:
+[2023-04-05T04:50:36.114+0000] {subprocess.py:93} INFO - [0m04:50:36  Running with dbt=1.4.5
+[2023-04-05T04:50:36.206+0000] {subprocess.py:93} INFO - [0m04:50:36  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-04-05T04:50:36.207+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2023-04-05T04:50:36.207+0000] {subprocess.py:93} INFO - - models.demo.example
+[2023-04-05T04:50:36.221+0000] {subprocess.py:93} INFO - [0m04:50:36  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[2023-04-05T04:50:36.224+0000] {subprocess.py:93} INFO - [0m04:50:36
+[2023-04-05T04:50:36.297+0000] {subprocess.py:93} INFO - [0m04:50:36  Concurrency: 1 threads (target='dev')
+[2023-04-05T04:50:36.298+0000] {subprocess.py:93} INFO - [0m04:50:36
+[2023-04-05T04:50:36.306+0000] {subprocess.py:93} INFO - [0m04:50:36  1 of 1 START sql view model elt_dbt.object_transformation ...................... [RUN]
+[2023-04-05T04:50:36.489+0000] {subprocess.py:93} INFO - [0m04:50:36  1 of 1 OK created sql view model elt_dbt.object_transformation ................. [[32mCREATE VIEW[0m in 0.18s]
+[2023-04-05T04:50:36.522+0000] {subprocess.py:93} INFO - [0m04:50:36
+[2023-04-05T04:50:36.523+0000] {subprocess.py:93} INFO - [0m04:50:36  Finished running 1 view model in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[2023-04-05T04:50:36.535+0000] {subprocess.py:93} INFO - [0m04:50:36
+[2023-04-05T04:50:36.536+0000] {subprocess.py:93} INFO - [0m04:50:36  [32mCompleted successfully[0m
+[2023-04-05T04:50:36.537+0000] {subprocess.py:93} INFO - [0m04:50:36
+[2023-04-05T04:50:36.538+0000] {subprocess.py:93} INFO - [0m04:50:36  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2023-04-05T04:50:37.169+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-04-05T04:50:37.195+0000] {taskinstance.py:1332} INFO - Marking task as SUCCESS. dag_id=ELT, task_id=object_transformation.sql, execution_date=20230405T045030, start_date=20230405T045033, end_date=20230405T045037
+[2023-04-05T04:50:37.245+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-04-05T04:50:37.268+0000] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check
